@@ -1,0 +1,130 @@
+/* ============================================================
+   VARIABLES.CSS — Design Tokens & System Variables
+   Greenfield Academy · Premium School Website
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+
+  /* ── COLOR SYSTEM ─────────────────────────────────────── */
+
+  /* Base Backgrounds */
+  --clr-ivory:        #F9F6F0;
+  --clr-cream:        #F4EFE6;
+  --clr-champagne:    #EDE5D4;
+  --clr-parchment:    #E8DFC8;
+
+  /* Primary Accent — Emerald / Olive */
+  --clr-emerald:      #1E5645;
+  --clr-emerald-mid:  #2A6E58;
+  --clr-emerald-light:#3D8B6E;
+  --clr-olive:        #4A5C3A;
+  --clr-olive-light:  #6B7C52;
+  --clr-sage:         #8FA67A;
+
+  /* Secondary Accent — Terracotta */
+  --clr-terracotta:   #C0624A;
+  --clr-burnt:        #B05535;
+  --clr-copper:       #C07A4A;
+
+  /* Grays & Neutrals */
+  --clr-stone-900:    #2A2520;
+  --clr-stone-800:    #3D3730;
+  --clr-stone-700:    #524A42;
+  --clr-stone-600:    #6B6259;
+  --clr-stone-500:    #8C8278;
+  --clr-stone-400:    #B0A89E;
+  --clr-stone-300:    #D0C9C0;
+  --clr-stone-200:    #E4DDD4;
+  --clr-stone-100:    #F0EBE4;
+
+  /* Semantic */
+  --clr-bg:           var(--clr-ivory);
+  --clr-surface:      var(--clr-cream);
+  --clr-text-primary: var(--clr-stone-900);
+  --clr-text-body:    var(--clr-stone-700);
+  --clr-text-muted:   var(--clr-stone-500);
+  --clr-accent:       var(--clr-emerald);
+  --clr-accent-hover: var(--clr-emerald-mid);
+  --clr-highlight:    var(--clr-terracotta);
+
+  /* ── TYPOGRAPHY ────────────────────────────────────────── */
+
+  --font-display:    'Sora', 'Helvetica Neue', sans-serif;
+  --font-body:       'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+
+  /* Scale (fluid clamp) */
+  --text-xs:    clamp(0.7rem,  1.5vw, 0.8rem);
+  --text-sm:    clamp(0.85rem, 1.8vw, 0.95rem);
+  --text-base:  clamp(0.95rem, 2vw,   1.05rem);
+  --text-md:    clamp(1.05rem, 2.2vw, 1.2rem);
+  --text-lg:    clamp(1.2rem,  2.5vw, 1.4rem);
+  --text-xl:    clamp(1.4rem,  3vw,   1.8rem);
+  --text-2xl:   clamp(1.8rem,  4vw,   2.4rem);
+  --text-3xl:   clamp(2.2rem,  5vw,   3.2rem);
+  --text-4xl:   clamp(2.8rem,  6vw,   4.2rem);
+  --text-5xl:   clamp(3.4rem,  7.5vw, 5.5rem);
+  --text-hero:  clamp(3.8rem,  9vw,   7rem);
+
+  /* ── SPACING ────────────────────────────────────────────── */
+
+  --sp-1:   0.25rem;
+  --sp-2:   0.5rem;
+  --sp-3:   0.75rem;
+  --sp-4:   1rem;
+  --sp-5:   1.25rem;
+  --sp-6:   1.5rem;
+  --sp-8:   2rem;
+  --sp-10:  2.5rem;
+  --sp-12:  3rem;
+  --sp-16:  4rem;
+  --sp-20:  5rem;
+  --sp-24:  6rem;
+  --sp-32:  8rem;
+  --sp-section: clamp(5rem, 10vw, 9rem);
+
+  /* ── BORDERS & RADIUS ───────────────────────────────────── */
+
+  --radius-sm:   4px;
+  --radius-md:   10px;
+  --radius-lg:   18px;
+  --radius-xl:   28px;
+  --radius-full: 9999px;
+
+  /* ── SHADOWS ────────────────────────────────────────────── */
+
+  --shadow-xs:  0 1px 3px rgba(42,37,32,0.06);
+  --shadow-sm:  0 2px 8px rgba(42,37,32,0.08);
+  --shadow-md:  0 6px 24px rgba(42,37,32,0.10);
+  --shadow-lg:  0 12px 40px rgba(42,37,32,0.13);
+  --shadow-xl:  0 24px 64px rgba(42,37,32,0.16);
+  --shadow-card:0 4px 20px rgba(30,86,69,0.10);
+
+  /* ── TRANSITIONS ────────────────────────────────────────── */
+
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring:cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   200ms;
+  --dur-base:   300ms;
+  --dur-slow:   500ms;
+  --dur-xl:     800ms;
+
+  /* ── LAYOUT ──────────────────────────────────────────────── */
+
+  --container-max: 1380px;
+  --container-xl:  1200px;
+  --container-lg:  1024px;
+  --container-md:  768px;
+  --gutter:        clamp(1.5rem, 5vw, 4rem);
+  --nav-h:         80px;
+
+  /* ── Z-INDEX ─────────────────────────────────────────────── */
+
+  --z-base:    1;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-nav:     900;
+  --z-toast:   1000;
+}

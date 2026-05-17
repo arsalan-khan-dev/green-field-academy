@@ -1,0 +1,294 @@
+/* ============================================================
+   ANIMATIONS.CSS — Reveal & Motion System
+   Greenfield Academy · Premium School Website
+   ============================================================ */
+
+/* ── REVEAL ON SCROLL ────────────────────────────────────── */
+
+.js-loaded [data-reveal] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: var(--ease-out);
+  transition-duration: var(--dur-xl);
+  will-change: opacity, transform;
+}
+
+.js-loaded [data-reveal].revealed,
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none !important;
+}
+
+
+/* Stagger Delays */
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+[data-delay="400"] { transition-delay: 400ms; }
+[data-delay="500"] { transition-delay: 500ms; }
+[data-delay="600"] { transition-delay: 600ms; }
+[data-delay="700"] { transition-delay: 700ms; }
+[data-delay="800"] { transition-delay: 800ms; }
+
+/* ── HERO ENTRY ANIMATIONS ────────────────────────────── */
+
+.hero-badge {
+  animation: hero-item-in 0.7s 0.3s var(--ease-out) both;
+}
+
+.hero-heading {
+  animation: hero-item-in 0.9s 0.5s var(--ease-out) both;
+}
+
+.hero-sub {
+  animation: hero-item-in 0.7s 0.75s var(--ease-out) both;
+}
+
+.hero-cta {
+  animation: hero-item-in 0.7s 0.95s var(--ease-out) both;
+}
+
+.hero-stats {
+  animation: hero-item-in 0.7s 1.1s var(--ease-out) both;
+}
+
+.hero-right {
+  animation: hero-right-in 1.2s 0.2s var(--ease-out) both;
+}
+
+.hero-card-award {
+  animation: float-card-1 4s ease-in-out infinite, card-in 0.8s 1.6s var(--ease-spring) both;
+}
+
+.hero-card-students {
+  animation: float-card-2 5s ease-in-out infinite, card-in 0.8s 1.9s var(--ease-spring) both;
+}
+
+@keyframes hero-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-right-in {
+  from {
+    opacity: 0;
+    transform: translateX(60px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── COUNTER ANIMATION ──────────────────────────────────── */
+
+.counter-num {
+  display: inline-block;
+  transition: all var(--dur-base);
+}
+
+/* ── PARALLAX ──────────────────────────────────────────── */
+
+.parallax-slow  { will-change: transform; }
+.parallax-fast  { will-change: transform; }
+
+/* ── DECORATIVE SHAPES ──────────────────────────────────── */
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.deco-circle--lg {
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(30,86,69,0.08);
+  animation: deco-spin 30s linear infinite;
+}
+
+.deco-circle--sm {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(192,98,74,0.08), transparent 70%);
+  animation: deco-breathe 8s ease-in-out infinite;
+}
+
+@keyframes deco-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes deco-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* ── HOVER GLOW ─────────────────────────────────────────── */
+
+.hover-glow {
+  transition: box-shadow var(--dur-base) var(--ease-out);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 0 4px rgba(30,86,69,0.12), var(--shadow-lg);
+}
+
+/* ── MARQUEE / TICKER ──────────────────────────────────── */
+
+.marquee-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: var(--sp-8);
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: rgba(249,246,240,0.18);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.marquee-item-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clr-terracotta);
+  flex-shrink: 0;
+}
+
+/* ── PAGE TRANSITION ────────────────────────────────────── */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--clr-emerald);
+  z-index: calc(var(--z-toast) + 50);
+  transform: translateY(100%);
+  transition: transform 0.5s var(--ease-out);
+  pointer-events: none;
+}
+
+.page-transition-overlay.active {
+  transform: translateY(0);
+}
+
+/* ── SKELETON SHIMMER (lazy) ────────────────────────────── */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--clr-stone-200) 25%,
+    var(--clr-stone-100) 50%,
+    var(--clr-stone-200) 75%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── NAV ANIMATED UNDERLINE ─────────────────────────────── */
+
+@keyframes nav-underline-in {
+  from { width: 0; opacity: 0; }
+  to   { width: calc(100% - 1.5rem); opacity: 1; }
+}
+
+/* ── LOADING BAR (top) ──────────────────────────────────── */
+
+#page-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--clr-terracotta);
+  z-index: calc(var(--z-toast) + 1);
+  width: 0%;
+  transition: width 0.3s var(--ease-out);
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* ── PREFERS-REDUCED-MOTION ─────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ── SMOOTH IMAGE LOAD ──────────────────────────────────── */
+
+img {
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+img.loading {
+  opacity: 0;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+/* ── SECTION ENTER HELPER ───────────────────────────────── */
+
+.section-enter {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.section-enter.in-view {
+  opacity: 1;
+  transform: none;
+}

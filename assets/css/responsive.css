@@ -1,0 +1,515 @@
+/* ============================================================
+   RESPONSIVE.CSS — Breakpoints & Adaptive Layout
+   Greenfield Academy · Premium School Website
+   ============================================================ */
+
+/* ── BREAKPOINTS
+   xs  : < 480px   (small phones)
+   sm  : 480–767px (large phones)
+   md  : 768–1023px (tablets)
+   lg  : 1024–1279px (small desktops)
+   xl  : 1280px+   (large desktops)
+   ──────────────────────────────────────── */
+
+/* ── TABLET (≤ 1024px) ──────────────────────────────────── */
+
+@media (max-width: 1024px) {
+
+  /* NAV */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-btn-admit {
+    display: none;
+  }
+
+  .nav-actions {
+    display: flex;
+  }
+
+  .nav-mobile-toggle {
+    display: flex;
+  }
+
+  /* Compact Responsive Logo Scaling for All Mobile/Tablet viewports */
+  .nav-container {
+    padding-inline: var(--sp-4) !important;
+    gap: var(--sp-4) !important;
+  }
+
+  .nav-logo {
+    gap: var(--sp-2) !important;
+  }
+
+  .nav-logo-tagline {
+    display: none !important;
+  }
+
+  .nav-logo-emblem {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+  }
+
+  .nav-logo-emblem svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
+
+  .nav-logo-name {
+    font-size: 0.95rem !important;
+  }
+
+  #navbar.menu-open,
+  #navbar.scrolled {
+    background: rgba(249, 246, 240, 0.98) !important;
+    box-shadow: 0 1px 0 rgba(42, 37, 32, 0.08) !important;
+  }
+
+  /* Premium Responsive Mobile Menu Styling */
+  .nav-mobile-menu {
+    background: rgba(249, 246, 240, 0.98) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: var(--sp-6) var(--sp-5) !important;
+    gap: var(--sp-1) !important;
+  }
+
+  .nav-mobile-link {
+    font-size: 1.1rem !important;
+    padding: var(--sp-3-5) var(--sp-3) !important;
+    border-bottom: 1px solid rgba(42, 37, 32, 0.06) !important;
+    color: var(--clr-stone-700) !important;
+    border-radius: var(--radius-lg);
+    transition: all 0.3s var(--ease-out) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-mobile-link:hover,
+  .nav-mobile-link:focus {
+    background: rgba(30, 86, 69, 0.05) !important;
+    color: var(--clr-emerald) !important;
+    padding-left: var(--sp-5) !important;
+  }
+
+  .nav-mobile-link svg {
+    transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+  }
+
+  .nav-mobile-link:hover svg {
+    transform: translateX(4px);
+    opacity: 0.8;
+    color: var(--clr-emerald);
+  }
+
+  .nav-mobile-admit {
+    margin-top: var(--sp-4) !important;
+    background: var(--clr-emerald) !important;
+    box-shadow: 0 4px 14px rgba(30, 86, 69, 0.25) !important;
+    transition: all 0.3s var(--ease-out) !important;
+  }
+
+  .nav-mobile-admit:hover {
+    background: var(--clr-emerald-mid) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(30, 86, 69, 0.35) !important;
+  }
+
+  /* HERO */
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-bottom: var(--sp-20);
+  }
+
+  .hero-left {
+    padding: calc(var(--nav-h) + var(--sp-4)) var(--gutter) var(--sp-12);
+    max-width: 100%;
+  }
+
+  .hero-right {
+    min-height: 50vw;
+    height: 56vw;
+    position: relative;
+  }
+
+  .hero-right .hero-visual-main {
+    position: absolute;
+  }
+
+  .hero-card-award {
+    left: var(--sp-6);
+    bottom: var(--sp-8);
+  }
+
+  .hero-card-students {
+    right: var(--sp-6);
+    top: var(--sp-6);
+  }
+
+  /* ABOUT */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-16);
+  }
+
+  .about-visual {
+    order: -1;
+  }
+
+  .about-img-main {
+    aspect-ratio: 4/5;
+  }
+
+  .about-img-secondary {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    aspect-ratio: 4/5;
+    transform: translateY(var(--sp-6)); /* Slightly less stagger shift on tablets */
+  }
+
+  .about-visual:hover .about-img-secondary {
+    transform: translateY(calc(var(--sp-6) - 10px)) scale(1.01);
+  }
+
+  .about-badge-tag {
+    left: -10px;
+    top: -15px;
+    right: auto;
+  }
+
+  .about-content {
+    padding-right: 0;
+  }
+
+  /* ACADEMICS */
+  .academics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* CAMPUS */
+  .campus-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .campus-item:nth-child(1) {
+    grid-column: span 7;
+  }
+
+  .campus-item:nth-child(2) { grid-column: span 5; }
+  .campus-item:nth-child(3) { grid-column: span 4; }
+  .campus-item:nth-child(4) { grid-column: span 4; }
+  .campus-item:nth-child(5) { grid-column: span 4; }
+  .campus-item:nth-child(6) { grid-column: span 8; }
+
+  /* Ensure overlays and texts are always visible on touch screens */
+  .campus-item-overlay {
+    opacity: 1 !important;
+  }
+  .campus-item-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* EVENTS */
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FACULTY */
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ADMISSIONS */
+  .admissions-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-16);
+  }
+
+  /* GALLERY */
+  .gallery-masonry {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-item:nth-child(7) {
+    grid-row: span 1;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-12);
+  }
+
+  /* FOOTER */
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-10);
+  }
+}
+
+/* ── MOBILE (≤ 768px) ───────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  #navbar {
+    height: 64px;
+  }
+
+  #navbar.scrolled {
+    height: 56px;
+  }
+
+  .nav-mobile-menu {
+    top: 64px;
+  }
+
+  #navbar.scrolled .nav-mobile-menu {
+    top: 56px;
+  }
+
+  /* HERO */
+  #hero {
+    padding-top: 64px; /* Matches mobile navbar height perfectly */
+  }
+
+  .hero-left {
+    padding: var(--sp-6) var(--gutter) var(--sp-10); /* Snug mobile padding */
+  }
+
+  .hero-heading {
+    font-size: clamp(2.8rem, 9vw, 4rem);
+  }
+
+  .hero-stats {
+    gap: var(--sp-8);
+  }
+
+  .hero-card {
+    display: none;
+  }
+
+  /* ABOUT */
+  .about-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    gap: var(--sp-6);
+  }
+
+  /* ACADEMICS */
+  .academics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CAMPUS */
+  .campus-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: var(--sp-4);
+  }
+
+  .campus-item,
+  .campus-item:nth-child(1),
+  .campus-item:nth-child(2),
+  .campus-item:nth-child(3),
+  .campus-item:nth-child(4),
+  .campus-item:nth-child(5),
+  .campus-item:nth-child(6) {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    aspect-ratio: 4/3 !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* EVENTS */
+  .events-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FACULTY */
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+  .testimonial-card.animate-span-2 {
+    grid-column: span 1;
+  }
+  .testimonial-card {
+    padding: var(--sp-6);
+  }
+
+  /* GALLERY */
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+  }
+
+  .gallery-item:nth-child(4) {
+    grid-row: span 1;
+  }
+
+  /* CONTACT */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* FOOTER */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  /* CURSOR */
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  button, a, input, select, textarea {
+    cursor: auto;
+  }
+}
+
+/* ── SMALL MOBILE (≤ 480px) ─────────────────────────────── */
+
+@media (max-width: 480px) {
+
+  :root {
+    --gutter: 1.25rem;
+    --sp-section: 4rem;
+  }
+
+
+
+  /* HERO */
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ABOUT */
+  .about-stats {
+    flex-wrap: wrap;
+  }
+
+  /* CAMPUS */
+  .campus-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .campus-item,
+  .campus-item:nth-child(1),
+  .campus-item:nth-child(2),
+  .campus-item:nth-child(3),
+  .campus-item:nth-child(4),
+  .campus-item:nth-child(5),
+  .campus-item:nth-child(6) {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    aspect-ratio: 16/10 !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* FACULTY */
+  .faculty-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* GALLERY */
+  .gallery-masonry {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 140px;
+  }
+
+  /* BACK TOP */
+  #back-top {
+    bottom: var(--sp-5);
+    right: var(--sp-5);
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ADMISSIONS */
+  .admissions-cta {
+    flex-direction: column;
+  }
+
+  .admissions-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── LARGE DESKTOPS (≥ 1440px) ──────────────────────────── */
+
+@media (min-width: 1440px) {
+  :root {
+    --gutter: 5rem;
+  }
+}
+
+/* ── PRINT ───────────────────────────────────────────────── */
+
+@media print {
+  #navbar,
+  #loading-screen,
+  .cursor-dot,
+  .cursor-ring,
+  #back-top,
+  #page-progress {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section--dark {
+    background: #f5f5f5 !important;
+    color: black !important;
+  }
+}
